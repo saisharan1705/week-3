@@ -1,6 +1,30 @@
 week:3
 
 DAY1:
+problem 1:(lcm gcd)
+
+#include <stdio.h>
+int GCD(int A, int B);
+int GCD(int A, int B) {
+    if(B==0)
+        return A;
+    else
+        return GCD(B, A % B);
+}
+int main() {
+	//code
+	long long int t,i,j;
+	scanf("%d",&t);
+	for(j=0;j<t;j++)
+	{
+	    long long int lcm,gcd,a,b;
+	    scanf("%d %d",&a,&b);
+	    gcd=GCD(a,b);
+	    lcm=(a*b)/gcd;
+	    printf("%d %d\n",lcm,gcd);
+	}
+	return 0;
+}
 
 problem 2:(prime numbers)
 
