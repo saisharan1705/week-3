@@ -59,3 +59,52 @@ int main() {
 	return 0;
 }
 
+problem 3:change
+
+#include<stdio.h>
+int power(int a,int b);
+int power(int a,int b)
+{
+	int i;
+	if(b==0)
+	{
+		return 1;
+	}
+	if(b%2==0)
+	{
+		return power(a*a,b/2);
+	}
+	else
+	{
+		return (a*power(a*a,(b-1)/2));
+	}
+}
+int d, x, y,z;
+void extendedEuclid(long long int A,long long  int B) {
+    if(B == 0) {
+        d = A;
+        x = 1;
+        y = 0;
+    }
+    else {
+        extendedEuclid(m, c%m);
+		long long int temp = z;
+		z = y;
+		y = temp - (c/m)*y;
+    }
+}
+long long int modInverse( long long int c, long long int M)
+{
+extendedEuclid(c,M);
+return (z%M+M)%M;
+}
+int main()
+{
+	long long int a,b,c,m,k,p;
+	long long int ans;
+	scanf("%lld %lld %lld %lld",&a,&b,&c,&m);
+	k=power(a,b);
+	p=modInverse(c,m);
+	ans=(k%m * p%m)%m;
+	printf("%lld",ans);
+}
