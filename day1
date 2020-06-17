@@ -14,14 +14,14 @@ int GCD(int A, int B) {
 int main() {
 	//code
 	long long int t,i,j;
-	scanf("%d",&t);
+	scanf("%lld",&t);
 	for(j=0;j<t;j++)
 	{
 	    long long int lcm,gcd,a,b;
-	    scanf("%d %d",&a,&b);
+	    scanf("%lld %lld",&a,&b);
 	    gcd=GCD(a,b);
 	    lcm=(a*b)/gcd;
-	    printf("%d %d\n",lcm,gcd);
+	    printf("%lld %lld\n",lcm,gcd);
 	}
 	return 0;
 }
