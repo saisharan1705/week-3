@@ -535,3 +535,72 @@ int getNthFromLast(Node *head, int n)
        }}
 }
 
+DAY 3:
+
+question 1:
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+void append(struct node **root,int n)
+{
+    struct node *temp;
+    temp=(struct node*)malloc(sizeof(struct node));
+    temp->data=n;
+    temp->next=NULL;
+    if(*root==NULL)
+    {
+        *root=temp;
+    }
+    else
+    {
+        struct node *p;
+        p=*root;
+        while(p->next!=NULL)
+        {
+            p=p->next;
+        }
+        p->next=temp;
+    }
+}
+void printlist(struct node*n)
+{
+    while(n!=NULL)
+    {
+        printf("%d ",n->data);
+        n=n->next;
+    }
+}
+int main()
+{
+    int t,n,i,j;
+    scanf("%d",&t);
+    for(i=0;i<t;i++)
+    {
+        struct node *root=NULL;
+        struct node *root1=NULL;
+        scanf("%d",&n);
+        int a[n];
+        for(j=0;j<n;j++)
+        {
+            
+        scanf("%d",&a[j]);
+        if(a[j]%2==0)
+            {
+        append(&root,a[j]);}
+        else
+        {
+            append(&root1,a[j]);
+        }
+        }
+        printlist(root);
+        printlist(root1);
+        printf("\n");
+    }
+
+}
