@@ -109,37 +109,6 @@ int main()
 	printf("%lld",ans);
 }
 
-problem 4:
-
-Node * removeDuplicates( Node *head) 
-{
- // your code goes here
-    struct Node*p=head;
-    struct Node*temp=head;
-    struct Node*q=temp->next;
-    while(p!=NULL)
-    {
-        temp=p;
-        q=temp->next;
-        while(q!=NULL)
-        {
-            if(p->data==q->data)
-            {
-                temp->next=q->next;
-                //q->next=NULL;
-            }
-            else
-            {
-                q=q->next;
-                temp=temp->next;
-            }
-        }
-        p=p->next;
-       
-    }
-    return head;
-}
-
 
 DAY 2:
 problem 1:
@@ -651,3 +620,36 @@ Node* reverseList(Node *head)
       head->next=NULL;
       return newhead;
   }
+
+
+problem 4:
+
+Node * removeDuplicates( Node *head) 
+{
+ // your code goes here
+    struct Node*p=head;
+    struct Node*temp=head;
+    struct Node*q=temp->next;
+    while(p!=NULL)
+    {
+        temp=p;
+        q=temp->next;
+        while(q!=NULL)
+        {
+            if(p->data==q->data)
+            {
+                temp->next=q->next;
+                //q->next=NULL;
+            }
+            else
+            {
+                q=q->next;
+                temp=temp->next;
+            }
+        }
+        p=p->next;
+       
+    }
+    return head;
+}
+
