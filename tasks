@@ -1,3 +1,78 @@
+BONUS problem 1:
+
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
+    struct ListNode *p=l1, *q=l2;
+    //(struct ListNode*)malloc(sizeof(struct ListNode));
+    int carry=0, sum,c1=0,c2=0,f=0;
+    while(l1!=NULL)
+    {
+        c1++;
+        l1=l1->next;
+    }
+   // printf("%d\n",c1);
+    while(l2!=NULL)
+    {
+        c2++;
+        l2=l2->next;
+    }
+    if(c1!=c2)
+    {
+    if(c1>c2)
+    {
+        int i;
+        for(i=c2;i<c1;i++)
+        {
+            //q->next=x;
+            append(&q,f);
+        }
+    }
+    else if(c2>c1)
+    {
+        int i;
+        for(i=c1;i<c2;i++)
+        {
+            //p->next=x;
+            append(&p,f);
+        }
+    }
+    }
+    //p->next=NULL;
+    //q->next=NULL;
+    struct ListNode *l3=NULL;
+    //(struct ListNode*)malloc(sizeof(struct ListNode));
+    while(p!=NULL && q!=NULL)
+    {
+        sum=add(carry,p->val,q->val);
+        carry=0;
+        if(sum>9)
+        {
+            carry=sum/10;
+            sum=sum%10;
+        }
+        p=p->next;
+        q=q->next;
+        //l3->val=sum;
+        //l3=l3->next;
+        //l3->next=NULL;
+        append(&l3,sum);
+        if(p==NULL && q==NULL && carry==1)
+        {
+            append(&l3,carry);
+        }
+    }
+    return l3;
+}
+int add(carry,val1,val2)
+{
+    int sum;
+    sum=carry+val1+val2;
+    if(carry==1)
+    {
+        carry=0;
+    }
+    return sum;
+}
+
 week:3
 
 DAY1:
