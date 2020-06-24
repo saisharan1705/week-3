@@ -821,3 +821,30 @@ Node* findIntersection(Node* head1, Node* head2)
     }
     return -1;
 }
+
+
+DAy 5:
+problem 1:
+
+bool isCircular(Node *head)
+{
+   // Your code here
+   struct Node*p=head->next;
+   if(head==NULL || head->next==NULL)
+   {
+       return false;
+   }
+   while(p!=head)
+   {
+       p=p->next;
+       if(p==NULL)
+       {
+           return false;
+           break;
+       }
+   }
+   if(p==head){
+   return true;}
+   return false;
+   
+}
